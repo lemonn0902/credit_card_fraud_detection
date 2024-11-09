@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="nav.css">
+<title>Feedback Form</title>
+
+<style>
+        body {
+            background-image: url("bgm.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .form-center {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px; /* Added padding for better positioning */
+        }
+
+        .feedback-form {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+</style>
+
+</head>
+<body style="background-color: beige;">
+<nav>
+    <a href="basic.html">Home</a>
+    <div class="dropdown">
+        <a href="#button4" class="dropbtn">About US &#9662;</a>
+        <div class="dropdown-content">
+            <a href="history.html">History</a>
+            <a href="features.html">Features</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <a href="podcast.html">Podcast</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<div class="form-center">
+    <div class="feedback-form">
+        <h1>Feedback Form</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Suggestions:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="improvement">How can we improve our product/service?</label>
+                <textarea id="improvement" name="improvement" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rate the website:</label>
+                <select id="rating" name="rating">
+                    <option value="5">Excellent</option>
+                    <option value="4">Very Good</option>
+                    <option value="3">Good</option>
+                    <option value="2">Fair</option>
+                    <option value="1">Poor</option>
+                </select>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div>
+        <ul>
+            <!-- Social Icons (Replace # with your actual social media links) -->
+            <li><a href="#" target="_blank"><img class="icon" src="facebook.jpg" alt="Facebook"></a></li>
+            <li><a href="#" target="_blank"><img class="icon" src="twitter.jpg" alt="Twitter"></a></li>
+            <li><a href="#" target="_blank"><img class="icon" src="insta.jpg" alt="Instagram"></a></li>
+        </ul>
+    </div>
+    <!-- Copyright Information -->
+    <p style="color:black">&copy; 2024 CardGuard. All rights reserved.</p>
+    <!-- Navigation Links -->
+    <ul>
+        <li><a href="basic.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Classes</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

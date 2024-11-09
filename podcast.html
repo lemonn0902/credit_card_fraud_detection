@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <title>Podcast Search</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            background-image: url('podcast.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown:hover {
+            background-color: #444;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: bisque;
+            margin-top: 100px; /* Adjusted for fixed nav bar */
+            background-color: #3b3838;
+            padding: 10px;
+            
+        }
+
+        #intro-heading {
+            font-size: 18px;
+            color: whitesmoke;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #3b3838;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 120px; /* Space between nav bar and heading */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        #search-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        #search-input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            width: 90%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .episode {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .episode:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .episode h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .episode button {
+            background-color: #28a745;
+        }
+
+        .episode button:hover {
+            background-color: #218838;
+        }
+
+        #audio-player {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: #ddd;
+        }
+
+        img.icon {
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="basic.html">Home</a>
+        <div class="dropdown">
+            <a href="#button4" class="dropbtn">About US &#9662;</a>
+            <div class="dropdown-content">
+                <a href="history.html">History</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <a href="podcast.html">Podcast</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <div id="intro-heading">
+        <p>Introducing our AI Podcast Generator: a cutting-edge tool that transforms keywords from any sentence into concise, informative podcasts on frequently asked questions related to credit card fraud detection systems. Designed to provide quick and valuable insights, our AI-driven podcasts cover essential topics, helping you stay informed and secure against credit card fraud.</p>
+    </div>
+
+    <h1>Podcast Search</h1>
+    <input type="text" id="search-input" placeholder="Enter keywords..." />
+    <button onclick="searchPodcast()">Search</button>
+
+    <div id="results"></div>
+    <audio id="audio-player" controls></audio>
+
+    <script>
+        const podcastData = [
+            {
+                "title": "Episode 1: How to detect credit card fraud on my account?",
+                "keywords": ["fraud", "detect","my account"],
+                "audioUrl": "audio1.mp3"
+            },
+            {
+                "title": "Episode 2: How to prevent credit card fraud on my account?",
+                "keywords": ["fraud", "prevent","my account"],
+                "audioUrl": "audio2.mp3"
+            },
+            {
+                "title": "Episode 3: How long does it take to resolve credit card fraud?",
+                "keywords": ["fraud", "How long","resolve","take"],
+                "audioUrl": "audio3.mp3"
+            },
+            {
+                "title": "Episode 4: What is two factor authentication?",
+                "keywords": ["2FA", "two factor authentication"],
+                "audioUrl": "audio4.mp3"
+            },
+            {
+                "title": "Episode 5: How can i monitor my credit card activity?",
+                "keywords": ["monitor", "activity"],
+                "audioUrl": "audio5.mp3"
+            },
+            {
+                "title": "Episode 6: How can i report a credit card fraud?",
+                "keywords": ["report", "fraud"],
+                "audioUrl": "audio6.mp3"
+            }
+        ];
+
+        function searchPodcast() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+           

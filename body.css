@@ -1,0 +1,46 @@
+body
+    {
+  background-image: url('history.avif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;  
+   } 
+  
+   .wrapper
+   {
+    margin: 10px auto;
+    width: 90%;
+   }
+   .img_deg
+   {
+    float:left;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-right: 15px;
+   }
+   .text-box
+   {
+    color: black;
+   } 
+   .wrapper2 
+   {
+    margin: 10px auto;
+    width: 100%;
+   }
+   .img_deg2
+   {
+    float:right;
+    border: 3px solid whitw;
+    border-radius: 10px;
+    margin-right: 15px;
+   }
+   .text-box
+   {
+    color: black;
+   }
+   ul{
+    background-color: lightblue;
+   }
+   footer  {
+    background-color: lightblue;
+   }

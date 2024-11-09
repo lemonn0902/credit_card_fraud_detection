@@ -1,0 +1,83 @@
+nav {
+    background-color:black;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+font-size:20px;
+    text-align: center;
+    padding: 16px 20px;
+border:solid 2px white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: azure;
+    color: black;
+}
+
+/* Style the dropdown button */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Style the dropdown button when it is hovered on */
+.dropdown:hover {
+    background-color: grey;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Add your custom styles for the footer here */
+
+footer {
+background-color: white;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+li {
+display: inline-block;
+margin-right: 10px;
+}
+a {
+text-decoration: none;
+color: black;
+}
+img.icon{height:30px; width:30px}
